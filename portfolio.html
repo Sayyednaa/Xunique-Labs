@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Xunique Labs - Our Work & Case Studies</title>
+    <meta name="description" content="Explore our latest work and the impact we've made for our clients through innovative web, mobile, cloud, and design solutions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo">
+                <img src="brand-logo-without-bg.png" alt="Xunique Labs" />
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link nav-link--active">Portfolio</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header__content animate-fade-in">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> &gt; <span>Portfolio</span>
+                </div>
+                <h1 class="page-header__title">Our Portfolio</h1>
+                <p class="page-header__subtitle">Explore our latest work and the impact we've made for our clients</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Portfolio Section -->
+        <section class="section portfolio-section">
+            <div class="container">
+                <!-- Portfolio Filter -->
+                <div class="portfolio-filter animate-slide-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="cloud">Cloud</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="portfolio-grid animate-slide-up">
+                    <!-- Project 1 -->
+                    <div class="portfolio-card" data-category="web">
+                        <div class="portfolio-card__image-container">
+                            <img src="assets/images/portfolio-fintech.jpg" alt="NexusFinance" class="portfolio-card__img">
+                            <div class="portfolio-card__overlay">
+                                <span class="portfolio-card__view-btn">View Details</span>
+                            </div>
+                            <span class="portfolio-card__badge">Web Application</span>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">NexusFinance</h3>
+                            <p class="portfolio-card__description">A comprehensive financial analytics platform with real-time market data visualization, portfolio tracking, and AI-powered investment insights.</p>
+                            <div class="portfolio-card__tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>D3.js</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="portfolio-card__meta">
+                                <span class="portfolio-card__date">Completed: March 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="portfolio-card" data-category="web">
+                        <div class="portfolio-card__image-container">
+                            <img src="assets/images/portfolio-ecommerce.jpg" alt="Aethel Commerce" class="portfolio-card__img">
+                            <div class="portfolio-card__overlay">
+                                <span class="portfolio-card__view-btn">View Details</span>
+                            </div>
+                            <span class="portfolio-card__badge">E-Commerce</span>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">Aethel Commerce</h3>
+                            <p class="portfolio-card__description">Premium luxury retail platform featuring immersive product experiences, seamless checkout, and personalized shopping recommendations.</p>
+                            <div class="portfolio-card__tags">
+                                <span>Next.js</span>
+                                <span>Stripe</span>
+                                <span>Contentful</span>
+                                <span>AWS</span>
+                            </div>
+                            <div class="portfolio-card__meta">
+                                <span class="portfolio-card__date">Completed: January 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="portfolio-card" data-category="mobile">
+                        <div class="portfolio-card__image-container">
+                            <img src="assets/images/portfolio-healthcare.jpg" alt="MedTrack" class="portfolio-card__img">
+                            <div class="portfolio-card__overlay">
+                                <span class="portfolio-card__view-btn">View Details</span>
+                            </div>
+                            <span class="portfolio-card__badge">Mobile App</span>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">MedTrack</h3>
+                            <p class="portfolio-card__description">Patient health tracking mobile app with real-time vitals monitoring, appointment scheduling, telehealth integration, and health data analytics.</p>
+                            <div class="portfolio-card__tags">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>HealthKit</span>
+                                <span>FHIR</span>
+                            </div>
+                            <div class="portfolio-card__meta">
+                                <span class="portfolio-card__date">Completed: November 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="portfolio-card" data-category="cloud">
+                        <div class="portfolio-card__image-container">
+                            <img src="assets/images/portfolio-saas.jpg" alt="CloudCore" class="portfolio-card__img">
+                            <div class="portfolio-card__overlay">
+                                <span class="portfolio-card__view-btn">View Details</span>
+                            </div>
+                            <span class="portfolio-card__badge">Cloud Platform</span>
+                        </div>
+                        <div class="portfolio-card__content">
+                            <h3 class="portfolio-card__title">CloudCore</h3>
+                            <p class="portfolio-card__description">Enterprise-grade cloud infrastructure management platform with automated deployments, real-time monitoring, and intelligent scaling.</p>
+                            <div class="portfolio-card__tags">
+                                <span>Go</span>
+                                <span>Kubernetes</span>
+                                <span>Terraform</span>
+                                <span>gRPC</span>
+                            </div>
+                            <div class="portfolio-card__meta">
+                                <span class="portfolio-card__date">Completed: July 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="section results-section bg-light">
+            <div class="container">
+                <div class="section__header text-center animate-slide-up">
+                    <h2 class="section__title">Results That Speak</h2>
+                </div>
+                <div class="metrics-grid animate-slide-up">
+                    <div class="metric-card">
+                        <div class="metric-card__value">150+</div>
+                        <div class="metric-card__label">Projects Completed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card__value">98%</div>
+                        <div class="metric-card__label">On-Time Delivery</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card__value">4.9/5</div>
+                        <div class="metric-card__label">Average Client Rating</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-card__value">$50M+</div>
+                        <div class="metric-card__label">Revenue Generated for Clients</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section bg-primary text-white">
+            <div class="container text-center animate-slide-up">
+                <h2 class="cta-title">Have a Project in Mind?</h2>
+                <p class="cta-subtitle">Let's create something amazing together.</p>
+                <a href="contact.html" class="btn btn--white btn--large mt-4">Start a Conversation</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="brand-logo-without-bg.png" alt="Xunique Labs Logo" class="footer__logo">
+                    <p class="footer__description">Empowering businesses with cutting-edge digital solutions, from web and mobile apps to scalable cloud infrastructure.</p>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__services">
+                    <h4 class="footer__heading">Services</h4>
+                    <ul>
+                        <li><a href="services.html#web">Web Development</a></li>
+                        <li><a href="services.html#mobile">Mobile Apps</a></li>
+                        <li><a href="services.html#cloud">Cloud Solutions</a></li>
+                        <li><a href="services.html#ai">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__heading">Contact</h4>
+                    <p>Email: <a href="mailto:contact@xuniquelabs.com" style="color: inherit;">contact@xuniquelabs.com</a></p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Location: New Delhi, India</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; <span class="copyright-year">2026</span> Xunique Labs. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
