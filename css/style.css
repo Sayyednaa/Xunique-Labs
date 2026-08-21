@@ -98,6 +98,12 @@ img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
+.logo-text{
+  margin-left: 10px;
+  font-family:monospace;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 a {
   text-decoration: none;
