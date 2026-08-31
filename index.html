@@ -101,20 +101,89 @@
     transform:translateY(0);
   }
 
-  /* ---------- NAV ---------- */
+  /* ---------- NAV & TOP STRIP ---------- */
   header{
     position:fixed;
     top:0; left:0; right:0;
     z-index:100;
+  }
+  .top-strip{
+    background:#000000;
+    border-bottom:1px solid rgba(255,255,255,0.09);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.73rem;
+    color:var(--text-dim-on-ink);
+    letter-spacing:0.04em;
+  }
+  .top-strip-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:6px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .top-strip-left, .top-strip-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .top-strip-link{
+    color:#EAF1F8;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    text-decoration:none;
+    transition:color 0.2s ease;
+  }
+  .top-strip-link:hover{
+    color:var(--brass-2);
+  }
+  .top-strip-time{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+  }
+  .top-strip-label{
+    color:var(--brass);
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  .top-strip-val{
+    color:#FFFFFF;
+    font-weight:500;
+  }
+  .top-strip-tz{
+    background:rgba(255,255,255,0.12);
+    color:var(--text-on-ink);
+    font-size:0.66rem;
+    padding:1px 6px;
+    border-radius:2px;
+    letter-spacing:0.04em;
+  }
+  .top-strip-icon{
+    width:13px;
+    height:13px;
+    stroke:var(--brass);
+    fill:none;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    flex-shrink:0;
+  }
+  .nav-wrap{
     background:rgba(246,244,236,0.86);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--paper-dim);
     transition:border-color 0.3s ease;
+    position:relative;
   }
   .nav{
     max-width:var(--maxw);
     margin:0 auto;
-    padding:18px 32px;
+    padding:16px 32px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -180,8 +249,8 @@
 
   @media (max-width:860px){
     .nav-links{
-      position:fixed;
-      top:64px; left:0; right:0;
+      position:absolute;
+      top:100%; left:0; right:0;
       background:var(--paper);
       border-bottom:1px solid var(--paper-dim);
       flex-direction:column;
@@ -206,7 +275,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    padding:168px 0 110px;
+    padding:178px 0 110px;
     overflow:hidden;
     background:
       linear-gradient(var(--paper-dim) 1px, transparent 1px) 0 0/48px 48px,
@@ -650,13 +719,15 @@
 
   /* ---------- MOBILE OPTIMIZATION ---------- */
   @media (max-width:600px){
+    .top-strip-inner{padding:6px 20px; font-size:0.68rem;}
+    .top-strip-label{display:none;}
     .wrap{padding:0 20px;}
     .nav{padding:14px 20px;}
     .logo{font-size:0.9rem; gap:8px;}
     .logo .mark, .foot-logo .mark{width:26px; height:26px;}
 
     section{padding:72px 0;}
-    .hero{padding:120px 0 64px; background-size:32px 32px;}
+    .hero{padding:145px 0 64px; background-size:32px 32px;}
     .hero-copy h1{font-size:clamp(2rem, 8vw, 2.6rem); max-width:100%;}
     .hero-copy p{font-size:1rem;}
     .hero-actions{gap:12px;}
@@ -692,31 +763,55 @@
 
     .btn{min-height:48px;}
     .nav-cta{min-height:auto;}
-    .nav-links{top:57px;}
+  }
+
+  @media (max-width:420px){
+    .top-strip-inner{padding:5px 14px; font-size:0.63rem;}
+    .top-strip-tz{font-size:0.6rem; padding:1px 4px;}
   }
 </style>
 </head>
 <body>
 
 <header>
-  <nav class="nav">
-    <a href="#top" class="logo">
-      <span class="mark">
-        <img src="assets/logo-mark.png" alt="Xunique Labs mark" loading="eager">
-      </span>
-      XUNIQUE LABS
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact" class="nav-cta">Start a Project</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <div class="top-strip-left">
+        <a href="tel:+919211043281" class="top-strip-link" title="Call Xunique Labs">
+          <svg class="top-strip-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>+91 92110 43281</span>
+        </a>
+      </div>
+      <div class="top-strip-right">
+        <div class="top-strip-time" id="userTimeContainer">
+          <svg class="top-strip-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span class="top-strip-label">Local Time:</span>
+          <span class="top-strip-val" id="userCurrentTime">--:--:--</span>
+          <span class="top-strip-tz" id="userTimezone">--</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="#top" class="logo">
+        <span class="mark">
+          <img src="assets/logo-mark.png" alt="Xunique Labs mark" loading="eager">
+        </span>
+        XUNIQUE LABS
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Start a Project</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
 </header>
 
 <main id="top">
@@ -1065,6 +1160,47 @@
     });
   }, { threshold: 0.4 });
   counters.forEach(el => countIO.observe(el));
+
+  // live user clock with timezone
+  function initUserClock() {
+    const timeEl = document.getElementById('userCurrentTime');
+    const tzEl = document.getElementById('userTimezone');
+    if (!timeEl || !tzEl) return;
+
+    function getTzAbbr(d) {
+      try {
+        const parts = new Intl.DateTimeFormat([], { timeZoneName: 'short' }).formatToParts(d);
+        const tzPart = parts.find(p => p.type === 'timeZoneName');
+        if (tzPart && tzPart.value) return tzPart.value;
+      } catch (e) {}
+
+      try {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        if (tz) return tz;
+      } catch (e) {}
+
+      const offset = -d.getTimezoneOffset();
+      const sign = offset >= 0 ? '+' : '-';
+      const hrs = String(Math.floor(Math.abs(offset) / 60)).padStart(2, '0');
+      const mins = String(Math.abs(offset) % 60).padStart(2, '0');
+      return `GMT${sign}${hrs}:${mins}`;
+    }
+
+    function updateTime() {
+      const now = new Date();
+      timeEl.textContent = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      tzEl.textContent = getTzAbbr(now);
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+  }
+  initUserClock();
 </script>
 
 </body>
