@@ -547,7 +547,144 @@
     border-radius:2px;
   }
 
-  @media (max-width:760px){.work-grid{grid-template-columns:1fr;}}
+  /* ---------- PRICING ---------- */
+  .pricing{background:var(--paper); border-top:1px solid var(--paper-dim);}
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+    align-items:stretch;
+  }
+  .pricing-card{
+    background:#FBFAF5;
+    border:1px solid var(--paper-dim);
+    padding:36px 30px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    transition:transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .pricing-card:hover{
+    border-color:var(--brass);
+    transform:translateY(-4px);
+    box-shadow:0 12px 28px -10px rgba(14,42,71,0.12);
+  }
+  .pricing-card.popular{
+    border-color:var(--brass);
+    background:#FFFDF7;
+    box-shadow:0 8px 24px -8px rgba(192,138,62,0.22);
+  }
+  .pricing-ribbon{
+    position:absolute;
+    top:18px;
+    right:18px;
+    background:var(--brass);
+    color:#FFFFFF;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.65rem;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:2px;
+  }
+  .pricing-card-header{
+    border-bottom:1px solid var(--paper-dim);
+    padding-bottom:20px;
+    margin-bottom:22px;
+  }
+  .pricing-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    color:var(--brass);
+    letter-spacing:0.06em;
+    display:block;
+    margin-bottom:8px;
+  }
+  .pricing-title{
+    font-size:1.35rem;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .pricing-delivery{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--text-dim-on-paper);
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+  .pricing-price-box{
+    margin:18px 0 24px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .pricing-orig{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.95rem;
+    color:var(--text-dim-on-paper);
+    text-decoration:line-through;
+    opacity:0.7;
+  }
+  .pricing-curr{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:2.3rem;
+    font-weight:700;
+    color:var(--ink);
+    line-height:1;
+  }
+  .pricing-curr .curr-sym{
+    font-size:1.4rem;
+    font-weight:500;
+    color:var(--brass);
+    margin-right:2px;
+  }
+  .pricing-features{
+    list-style:none;
+    margin-bottom:30px;
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .pricing-features li{
+    font-size:0.88rem;
+    color:var(--text-on-paper);
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    line-height:1.4;
+  }
+  .pricing-features svg{
+    width:16px;
+    height:16px;
+    flex-shrink:0;
+    color:var(--ok);
+    margin-top:2px;
+  }
+  .pricing-footer{
+    margin-top:auto;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    text-align:center;
+  }
+  .pricing-footer .btn{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+  .pricing-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color:var(--text-dim-on-paper);
+    letter-spacing:0.03em;
+  }
+
+  @media (max-width:880px){
+    .pricing-grid{grid-template-columns:1fr; max-width:500px; margin:0 auto;}
+  }
 
   /* ---------- SPEC / STATS ---------- */
   .spec{background:var(--paper);}
@@ -804,6 +941,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact" class="nav-cta">Start a Project</a></li>
       </ul>
@@ -1017,6 +1155,185 @@
     </div>
   </section>
 
+  <!-- PRICING -->
+  <section id="pricing" class="pricing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">Affordable Plans</div>
+          <h2>Best Pricing</h2>
+        </div>
+        <p>We strive to offer the most competitive prices in the web development industry. Our mission is to make high-quality websites accessible to every business, startup, agency and company, ensuring affordability without compromising on excellence.</p>
+      </div>
+
+      <div class="pricing-grid reveal">
+
+        <!-- Plan 1: Starter -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <span class="pricing-num mono">SHEET P-01</span>
+            <h3 class="pricing-title">Starter</h3>
+            <div class="pricing-delivery mono">
+              <span>🕓 Delivery: 1–2 Days</span>
+            </div>
+          </div>
+          <div class="pricing-price-box">
+            <span class="pricing-orig">₹2999</span>
+            <div class="pricing-curr">
+              <span class="curr-sym">₹</span>999/-
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>1 Premium Landing Page</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Mobile Friendly Design</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>SEO-Friendly Design</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Inquiry / Contact Form</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Social Media Integration</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Google Map Integration</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>WhatsApp Integration</span>
+            </li>
+          </ul>
+          <div class="pricing-footer">
+            <a href="https://wa.me/919211043281?text=Hi,%20I'm%20Looking%20for%20a%20New%20Landing%20/%20Single%20Page%20Website%20(Starter%20Plan),%20how%20can%20we%20proceed%20further...!" class="btn btn-ghost" target="_blank" rel="noopener">Get Started →</a>
+            <span class="pricing-note">No Hidden or Extra Charges</span>
+          </div>
+        </div>
+
+        <!-- Plan 2: Business Website (Popular) -->
+        <div class="pricing-card popular">
+          <div class="pricing-ribbon">Popular</div>
+          <div class="pricing-card-header">
+            <span class="pricing-num mono">SHEET P-02</span>
+            <h3 class="pricing-title">Business Website</h3>
+            <div class="pricing-delivery mono">
+              <span>🕓 Delivery: 3–5 Days</span>
+            </div>
+          </div>
+          <div class="pricing-price-box">
+            <span class="pricing-orig">₹10000</span>
+            <div class="pricing-curr">
+              <span class="curr-sym">₹</span>4,999/-
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Up to 5 Pages</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Blog Setup</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Mobile &amp; SEO Friendly Design</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Contact &amp; Inquiry Forms</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>WhatsApp &amp; Social Media Integration</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Google Map Integration</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>1 Month Free Maintenance</span>
+            </li>
+          </ul>
+          <div class="pricing-footer">
+            <a href="https://wa.me/919211043281?text=Hi,%20I'm%20Looking%20for%20a%20Business%20Website%20(Basic%20Plan),%20how%20can%20we%20proceed%20further..." class="btn btn-primary" target="_blank" rel="noopener">Book Now →</a>
+            <span class="pricing-note">No Hidden or Extra Charges</span>
+          </div>
+        </div>
+
+        <!-- Plan 3: E-Commerce Store -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <span class="pricing-num mono">SHEET P-03</span>
+            <h3 class="pricing-title">E-Commerce Store</h3>
+            <div class="pricing-delivery mono">
+              <span>🕓 Delivery: 7–10 Days</span>
+            </div>
+          </div>
+          <div class="pricing-price-box">
+            <span class="pricing-orig">₹25000</span>
+            <div class="pricing-curr">
+              <span class="curr-sym">₹</span>9,999/-
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>WooCommerce Store Setup</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Payment Gateway &amp; Shipping Setup</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Order Dashboard</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>WhatsApp &amp; Social Media Integration</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Mobile &amp; SEO Friendly Design</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Contact &amp; Inquiry Forms</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Google Map Integration</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Popup Offers + CTA Sections</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>1 Month Free Maintenance</span>
+            </li>
+          </ul>
+          <div class="pricing-footer">
+            <a href="https://wa.me/919211043281?text=Hi,%20I'm%20Looking%20for%20an%20E-Commerce%20Store%20Plan,%20how%20can%20we%20proceed%20further...!" class="btn btn-ghost" target="_blank" rel="noopener">Launch Store →</a>
+            <span class="pricing-note">No Hidden or Extra Charges</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SPEC / STATS -->
   <section class="spec" id="about">
     <div class="wrap">
@@ -1092,6 +1409,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </div>
