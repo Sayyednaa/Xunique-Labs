@@ -1345,19 +1345,32 @@
       padding-right:36px;
     }
     .form-actions{
-      flex-direction:column;
-      gap:10px;
-      margin-top:18px;
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:8px;
+      margin-top:14px;
     }
     .form-actions .btn{
       width:100%;
-      min-height:44px;
-      padding:11px 18px;
+      min-height:36px;
+      padding:7px 12px;
+      font-size:0.82rem;
       justify-content:center;
       text-align:center;
     }
     .form-submit-btn{
-      font-size:0.88rem;
+      min-height:36px;
+      padding:7px 12px;
+      font-size:0.82rem;
+    }
+    .form-submit-btn svg{
+      width:16px;
+      height:16px;
+    }
+    .form-email-btn{
+      min-height:36px;
+      padding:7px 12px;
+      font-size:0.82rem;
     }
     .channel-value{
       font-size:0.82rem;
@@ -1525,7 +1538,7 @@
     .subfoot{padding:18px 20px 22px; flex-direction:column;}
 
     .btn{min-height:48px;}
-    .nav-cta{min-height:auto;}
+    .nav-cta, .form-actions .btn{min-height:auto;}
   }
 
   @media (max-width:420px){
@@ -2303,7 +2316,7 @@
                 <span>Submit</span>
               </button>
               <a href="mailto:support@xuniquelabs.com" class="btn btn-ghost form-email-btn">
-                <span>Or Email Us Directly</span>
+                <span>Email</span>
               </a>
             </div>
             <div class="form-notice mono">
