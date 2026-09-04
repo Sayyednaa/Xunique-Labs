@@ -8,8 +8,8 @@
 <meta name="description" content="Xunique Labs is a product studio that designs and builds web and mobile software with the precision of an engineering drawing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/png" href="assets/logo-mark.png">
-<link rel="apple-touch-icon" href="assets/logo-mark.png">
+<link rel="icon" type="image/png" href="assets/only%20x.png">
+<link rel="apple-touch-icon" href="assets/only%20x.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -189,40 +189,57 @@
     justify-content:space-between;
   }
   .logo{
-    display:flex;
+    display:inline-flex;
     align-items:center;
-    gap:10px;
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:700;
-    font-size:1.02rem;
-    letter-spacing:0.01em;
+    line-height:1;
+    text-decoration:none;
   }
   .logo .mark{
-    width:30px; height:30px;
+    height:50px;
+    width:auto;
     position:relative;
     flex-shrink:0;
-    display:flex;
+    display:inline-flex;
     align-items:center;
     justify-content:center;
   }
-  .logo .mark img{width:100%; height:100%; object-fit:contain;}
-  .foot-logo .mark{width:30px; height:30px;}
+  .logo .mark img{
+    height:50px;
+    width:auto;
+    max-height:100%;
+    object-fit:contain;
+    display:block;
+  }
+  .foot-logo .mark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
   .mark-plaque{
     background:var(--paper);
     border-radius:6px;
-    padding:4px;
+    padding:8px 16px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
   }
-  .mark-plaque img{width:100%; height:100%; object-fit:contain;}
+  .mark-plaque img{
+    height:36px;
+    width:auto;
+    object-fit:contain;
+    display:block;
+  }
   .nav-links{
     display:flex;
     align-items:center;
-    gap:34px;
+    gap:40px;
   }
   .nav-links a{
     font-size:0.86rem;
     color:var(--text-on-paper);
     position:relative;
-    padding:4px 0;
+    padding:6px 0;
+    transition:color 0.2s ease;
   }
   .nav-links a::after{
     content:"";
@@ -232,6 +249,7 @@
     background:var(--brass);
     transition:width 0.25s ease;
   }
+  .nav-links a:hover{color:var(--ink);}
   .nav-links a:hover::after{width:100%;}
   .nav-cta{
     font-family:'IBM Plex Mono', monospace;
@@ -241,33 +259,101 @@
     border:1px solid var(--ink);
     color:var(--ink);
     border-radius:var(--radius);
-    transition:background 0.25s ease, color 0.25s ease;
+    transition:background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
     white-space:nowrap;
   }
-  .nav-cta:hover{background:var(--ink); color:var(--text-on-ink);}
+  .nav-cta:hover{
+    background:var(--ink);
+    color:var(--text-on-ink);
+    transform:translateY(-1px);
+    box-shadow:0 4px 14px rgba(14,42,71,0.25);
+  }
   .nav-toggle{display:none;}
 
   @media (max-width:860px){
+    .nav{
+      position:relative;
+      justify-content:center;
+    }
+    .logo{
+      margin:0 auto;
+    }
+    .logo .mark,
+    .logo .mark img{
+      height:46px;
+    }
     .nav-links{
       position:absolute;
       top:100%; left:0; right:0;
-      background:var(--paper);
-      border-bottom:1px solid var(--paper-dim);
+      background:#FAF8F0;
+      border-bottom:1.5px solid var(--paper-dim);
       flex-direction:column;
-      align-items:flex-start;
-      gap:0;
-      padding:8px 32px 20px;
-      transform:translateY(-8px);
+      align-items:stretch;
+      gap:8px;
+      padding:16px 28px 24px;
+      transform:translateY(-10px);
       opacity:0;
       pointer-events:none;
       transition:opacity 0.25s ease, transform 0.25s ease;
+      box-shadow:0 18px 30px -10px rgba(14,42,71,0.18);
     }
-    .nav-links.open{opacity:1; transform:translateY(0); pointer-events:auto; box-shadow:0 16px 28px -14px rgba(14,42,71,0.28);}
-    .nav-links a{padding:12px 0; width:100%; border-bottom:1px solid var(--paper-dim);}
-    .nav-links .nav-cta{margin-top:14px; text-align:center;}
+    .nav-links.open{opacity:1; transform:translateY(0); pointer-events:auto;}
+    .nav-links li{width:100%;}
+    .nav-links a{
+      padding:10px 14px;
+      width:100%;
+      border-radius:var(--radius);
+      border-bottom:none;
+      font-size:0.94rem;
+      font-weight:500;
+      display:flex;
+      align-items:center;
+      transition:background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:active{
+      background:rgba(14,42,71,0.06);
+      color:var(--ink);
+      transform:translateX(4px);
+    }
+    .nav-links a::after{display:none;}
+    .nav-links .nav-cta{
+      margin-top:10px;
+      padding:14px 20px;
+      text-align:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      border:1.5px solid var(--ink);
+      background:transparent;
+      color:var(--ink);
+      font-size:0.86rem;
+      font-weight:600;
+      letter-spacing:0.04em;
+      border-radius:var(--radius);
+      box-shadow:0 3px 0 var(--ink);
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
+      transition:all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-links .nav-cta:hover,
+    .nav-links .nav-cta:focus,
+    .nav-links .nav-cta:active{
+      background:var(--ink) !important;
+      color:var(--text-on-ink) !important;
+      border-color:var(--ink) !important;
+      transform:translateY(-2px) !important;
+      box-shadow:0 8px 20px -3px rgba(14,42,71,0.38) !important;
+    }
     .nav-toggle{
       display:flex; flex-direction:column; gap:5px;
       background:none; border:none; cursor:pointer; padding:8px;
+      position:absolute;
+      right:24px;
+      top:50%;
+      transform:translateY(-50%);
     }
     .nav-toggle span{width:20px; height:1.5px; background:var(--ink); display:block;}
   }
@@ -451,7 +537,7 @@
   }
   .stage{
     display:grid;
-    grid-template-columns:64px 200px 1fr 120px;
+    grid-template-columns:56px 170px 1fr 130px 85px;
     gap:20px;
     align-items:center;
     padding:26px 0;
@@ -485,66 +571,237 @@
     text-align:right;
   }
 
-  @media (max-width:700px){
-    .stage{grid-template-columns:40px 1fr; row-gap:8px;}
-    .stage-bar, .stage-time{grid-column:2/3;}
+  @media (max-width:820px){
+    .schedule{
+      border-top:none;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .stage{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      grid-template-areas:
+        "index title time"
+        "desc  desc  desc"
+        "bar   bar   bar";
+      gap:8px 12px;
+      align-items:center;
+      padding:20px 18px;
+      background:rgba(255,255,255,0.035);
+      border:1px solid rgba(234,241,248,0.12);
+      border-radius:var(--radius);
+      box-shadow:0 4px 16px -4px rgba(0,0,0,0.2);
+    }
+    .stage-index{
+      grid-area:index;
+      font-size:0.8rem;
+      font-weight:600;
+      color:var(--brass-2);
+      background:rgba(192,138,62,0.18);
+      border:1px solid rgba(192,138,62,0.3);
+      padding:2px 8px;
+      border-radius:2px;
+      line-height:1.2;
+    }
+    .stage h4{
+      grid-area:title;
+      font-size:1.05rem;
+      color:var(--text-on-ink);
+      margin:0;
+    }
+    .stage-time{
+      grid-area:time;
+      text-align:right;
+      font-size:0.75rem;
+      color:var(--brass-2);
+      font-weight:500;
+      letter-spacing:0.04em;
+    }
+    .stage p{
+      grid-area:desc;
+      font-size:0.88rem;
+      line-height:1.55;
+      color:var(--text-dim-on-ink);
+      margin:4px 0 6px 0;
+    }
+    .stage-bar{
+      grid-area:bar;
+      height:5px;
+      width:100%;
+      background:rgba(234,241,248,0.14);
+      border-radius:3px;
+      margin-top:4px;
+    }
   }
 
   /* ---------- WORK ---------- */
   .work{background:var(--paper);}
   .work-grid{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(3, 1fr);
     gap:24px;
   }
   .case{
     position:relative;
     border:1px solid var(--paper-dim);
     background:#FBFAF5;
-    padding:26px;
-    min-height:260px;
+    padding:26px 24px 24px;
+    min-height:280px;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
     overflow:hidden;
-    transition:border-color 0.3s ease;
+    text-decoration:none;
+    color:inherit;
+    border-radius:2px;
+    transition:border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    -webkit-tap-highlight-color:rgba(192,138,62,0.12);
   }
   .case::before, .case::after{
     content:"";
     position:absolute;
     width:14px; height:14px;
     border:1px solid var(--brass);
-    opacity:0;
-    transition:opacity 0.3s ease;
+    opacity:0.35;
+    transition:opacity 0.25s ease, border-color 0.25s ease;
   }
-  .case::before{top:12px; left:12px; border-right:none; border-bottom:none;}
-  .case::after{bottom:12px; right:12px; border-left:none; border-top:none;}
-  .case:hover{border-color:var(--brass);}
-  .case:hover::before, .case:hover::after{opacity:1;}
+  .case::before{top:10px; left:10px; border-right:none; border-bottom:none;}
+  .case::after{bottom:10px; right:10px; border-left:none; border-top:none;}
+  .case:hover, .case:focus-visible{
+    border-color:var(--brass);
+    transform:translateY(-4px);
+    box-shadow:0 12px 28px -8px rgba(14,42,71,0.12);
+  }
+  .case:hover::before, .case:hover::after,
+  .case:focus-visible::before, .case:focus-visible::after{
+    opacity:1;
+  }
+  .case:active{
+    transform:scale(0.985);
+    border-color:var(--brass);
+    background:#FAF7ED;
+  }
+  .case-top{
+    position:absolute;
+    top:20px;
+    left:22px;
+    right:22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:3;
+    pointer-events:none;
+  }
   .case-tag{
-    position:absolute; top:24px; left:26px;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.68rem;
     color:var(--text-dim-on-paper);
     letter-spacing:0.05em;
   }
+  .case-action{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color:var(--brass);
+    letter-spacing:0.05em;
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+    transition:color 0.2s ease, transform 0.2s ease;
+  }
+  .case:hover .case-action{
+    color:var(--ink);
+    transform:translate(2px, -2px);
+  }
   .case-figure{
     position:absolute; inset:0;
-    background:linear-gradient(160deg, #E3DECB, #F1EEE2);
+    background:linear-gradient(175deg, #E5E0CF 0%, #ECE7D8 35%, rgba(251,250,245,0.92) 65%, #FBFAF5 100%);
+    pointer-events:none;
   }
-  .case-figure svg{position:absolute; inset:0; width:100%; height:100%; opacity:0.5;}
-  .case-body{position:relative;}
-  .case h3{color:var(--ink); font-size:1.2rem; margin-bottom:6px;}
-  .case p{color:var(--text-dim-on-paper); font-size:0.86rem; margin-bottom:14px;}
-  .case .stack{display:flex; gap:8px; flex-wrap:wrap;}
+  .case-figure svg{position:absolute; top:0; left:0; width:100%; height:75%; opacity:0.42;}
+  .case-body{
+    position:relative;
+    z-index:2;
+    margin-top:auto;
+    padding-top:40px;
+  }
+  .case h3{color:var(--ink); font-size:1.22rem; margin-bottom:6px; font-weight:700;}
+  .case p{color:var(--text-dim-on-paper); font-size:0.88rem; line-height:1.52; margin-bottom:14px;}
+  .case .stack{display:flex; gap:7px; flex-wrap:wrap;}
   .case .stack span{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.66rem;
     padding:4px 9px;
     border:1px solid var(--paper-dim);
     color:var(--text-on-paper);
-    background:var(--paper);
+    background:rgba(251,250,245,0.85);
     border-radius:2px;
+  }
+
+  @media (max-width:980px){
+    .work-grid{
+      grid-template-columns:repeat(2, 1fr);
+      gap:20px;
+    }
+  }
+  @media (max-width:680px){
+    .work-grid{
+      grid-template-columns:1fr;
+      gap:18px;
+      max-width:500px;
+      margin:0 auto;
+    }
+    .case{
+      min-height:auto;
+      padding:24px 20px 22px;
+    }
+    .case-top{
+      top:16px;
+      left:18px;
+      right:18px;
+    }
+    .case-tag{
+      font-size:0.65rem;
+    }
+    .case-action{
+      font-size:0.65rem;
+    }
+    .case-body{
+      padding-top:34px;
+    }
+    .case h3{
+      font-size:1.15rem;
+    }
+    .case p{
+      font-size:0.86rem;
+      margin-bottom:12px;
+    }
+    .case .stack{
+      gap:6px;
+    }
+    .case .stack span{
+      font-size:0.64rem;
+      padding:4px 8px;
+    }
+  }
+  @media (max-width:420px){
+    .case{
+      padding:20px 16px 18px;
+    }
+    .case-top{
+      top:14px;
+      left:14px;
+      right:14px;
+    }
+    .case-body{
+      padding-top:28px;
+    }
+    .case h3{
+      font-size:1.1rem;
+    }
+    .case p{
+      font-size:0.84rem;
+    }
   }
 
   /* ---------- PRICING ---------- */
@@ -806,6 +1063,355 @@
     white-space:nowrap;
   }
 
+  /* ---------- CONTACT US SECTION ---------- */
+  .contact-section{
+    background:
+      linear-gradient(var(--paper-dim) 1px, transparent 1px) 0 0/48px 48px,
+      linear-gradient(90deg, var(--paper-dim) 1px, transparent 1px) 0 0/48px 48px,
+      var(--paper);
+    padding:110px 0 120px;
+    border-top:1px solid var(--paper-dim);
+    position:relative;
+  }
+  .contact-layout{
+    display:grid;
+    grid-template-columns:1fr 1.25fr;
+    gap:40px;
+    align-items:start;
+  }
+  .contact-info-panel{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .contact-card{
+    background:#FAF8F0;
+    border:1px solid var(--paper-dim);
+    border-radius:var(--radius);
+    padding:36px 30px;
+    position:relative;
+    box-shadow:0 8px 24px -12px rgba(14,42,71,0.08);
+  }
+  .contact-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:linear-gradient(90deg, var(--ink), var(--brass));
+  }
+  .contact-card-label{
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    color:var(--brass);
+    display:block;
+    margin-bottom:10px;
+  }
+  .contact-card h3{
+    font-size:1.45rem;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .contact-card p{
+    color:var(--text-dim-on-paper);
+    font-size:0.9rem;
+    line-height:1.6;
+    margin-bottom:26px;
+  }
+  .contact-channels{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:26px;
+  }
+  .channel-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px 14px;
+    background:#FFFFFF;
+    border:1px solid var(--paper-dim);
+    border-radius:var(--radius);
+    transition:transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .channel-item:hover{
+    transform:translateX(3px);
+    border-color:var(--brass);
+    box-shadow:0 4px 14px -4px rgba(14,42,71,0.12);
+  }
+  .channel-icon{
+    width:38px;
+    height:38px;
+    border-radius:4px;
+    background:var(--paper);
+    border:1px solid var(--paper-dim);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    color:var(--ink);
+  }
+  .channel-icon svg{
+    width:18px;
+    height:18px;
+  }
+  .channel-text{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    min-width:0;
+  }
+  .channel-title{
+    font-size:0.72rem;
+    color:var(--text-dim-on-paper);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+  .channel-value{
+    font-size:0.86rem;
+    color:var(--ink);
+    font-weight:500;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .contact-meta-strip{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding-top:20px;
+    border-top:1px dashed var(--paper-dim);
+    font-size:0.8rem;
+    color:var(--text-dim-on-paper);
+  }
+  .meta-badge{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .meta-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--ok);
+    box-shadow:0 0 0 3px rgba(92,138,110,0.2);
+    display:inline-block;
+  }
+  .meta-label{
+    font-size:0.72rem;
+    color:var(--brass);
+    letter-spacing:0.06em;
+  }
+
+  /* Contact Form */
+  .contact-form-panel{
+    background:#FFFFFF;
+    border:1px solid var(--paper-dim);
+    border-radius:var(--radius);
+    padding:34px 32px;
+    box-shadow:0 12px 36px -16px rgba(14,42,71,0.12);
+  }
+  .form-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom:16px;
+    margin-bottom:22px;
+    border-bottom:1px solid var(--paper-dim);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .form-title-spec{
+    font-size:0.74rem;
+    color:var(--ink);
+    letter-spacing:0.08em;
+    font-weight:600;
+  }
+  .form-status-stamp{
+    font-size:0.68rem;
+    color:var(--brass);
+    background:rgba(192,138,62,0.12);
+    padding:2px 8px;
+    border-radius:2px;
+    letter-spacing:0.06em;
+  }
+  .form-row{
+    display:grid;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .form-row-2{
+    grid-template-columns:1fr 1fr;
+  }
+  .form-group{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-bottom:16px;
+  }
+  .form-row .form-group{
+    margin-bottom:0;
+  }
+  .form-label{
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    color:var(--text-dim-on-paper);
+    font-weight:500;
+  }
+  .form-input, .form-select, .form-textarea{
+    width:100%;
+    padding:11px 14px;
+    background:var(--paper);
+    border:1px solid var(--paper-dim);
+    border-radius:var(--radius);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:0.88rem;
+    color:var(--text-on-paper);
+    transition:border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    outline:none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus{
+    border-color:var(--ink);
+    background:#FFFFFF;
+    box-shadow:0 0 0 3px rgba(14,42,71,0.08);
+  }
+  .form-textarea{
+    resize:vertical;
+    min-height:96px;
+    line-height:1.5;
+  }
+  .form-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:22px;
+    flex-wrap:wrap;
+  }
+  .form-submit-btn{
+    cursor:pointer;
+    flex:1 1 200px;
+    justify-content:center;
+    border:none;
+  }
+  .form-wa-btn{
+    cursor:pointer;
+    flex:1 1 180px;
+    justify-content:center;
+  }
+  .form-notice{
+    margin-top:14px;
+    font-size:0.72rem;
+    color:var(--text-dim-on-paper);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    line-height:1.4;
+  }
+  .form-notice svg{flex-shrink:0; color:var(--brass);}
+
+  @media (max-width:860px){
+    .contact-section{padding:72px 0 80px;}
+    .contact-layout{
+      display:flex;
+      flex-direction:column;
+      gap:26px;
+    }
+    .contact-form-panel{
+      order:1;
+      padding:28px 22px;
+    }
+    .contact-info-panel{
+      order:2;
+    }
+    .contact-card{
+      padding:28px 22px;
+    }
+    .form-row-2{
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .form-group{
+      margin-bottom:14px;
+    }
+    .form-input, .form-select, .form-textarea{
+      font-size:16px; /* Prevents auto-zoom on iOS Safari */
+      padding:12px 14px;
+      -webkit-appearance:none;
+    }
+    .form-select{
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23132437' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-position:right 14px center;
+      padding-right:36px;
+    }
+    .form-actions{
+      flex-direction:column;
+      gap:10px;
+      margin-top:18px;
+    }
+    .form-actions .btn{
+      width:100%;
+      min-height:44px;
+      padding:11px 18px;
+      justify-content:center;
+      text-align:center;
+    }
+    .form-submit-btn{
+      font-size:0.88rem;
+    }
+    .channel-value{
+      font-size:0.82rem;
+      white-space:normal;
+      word-break:break-all;
+      line-height:1.35;
+    }
+  }
+
+  @media (max-width:600px){
+    .contact-section{padding:56px 0 64px;}
+    .contact-card, .contact-form-panel{
+      padding:22px 16px;
+    }
+    .form-header{
+      padding-bottom:12px;
+      margin-bottom:16px;
+    }
+    .form-title-spec{
+      font-size:0.7rem;
+    }
+    .form-status-stamp{
+      font-size:0.64rem;
+      padding:2px 6px;
+    }
+    .contact-card h3{
+      font-size:1.25rem;
+    }
+    .contact-card p{
+      font-size:0.86rem;
+      margin-bottom:20px;
+    }
+    .channel-item{
+      padding:10px 12px;
+      gap:10px;
+    }
+    .channel-icon{
+      width:34px;
+      height:34px;
+    }
+    .channel-icon svg{
+      width:16px;
+      height:16px;
+    }
+    .channel-title{
+      font-size:0.68rem;
+    }
+    .contact-meta-strip{
+      padding-top:16px;
+      gap:8px;
+      font-size:0.75rem;
+    }
+  }
+
   /* ---------- CTA BANNER ---------- */
   .cta-band{
     background:
@@ -813,7 +1419,8 @@
       linear-gradient(90deg, var(--paper-dim) 1px, transparent 1px) 0 0/48px 48px,
       var(--paper);
     text-align:center;
-    padding:130px 0;
+    padding:100px 0;
+    border-top:1px solid var(--paper-dim);
   }
   .cta-band h2{
     font-size:clamp(2rem, 4vw, 3rem);
@@ -851,7 +1458,7 @@
   .tb-cell ul li{margin-bottom:9px; font-size:0.88rem;}
   .tb-cell ul li a:hover{color:var(--brass-2);}
   .tb-cell p{font-size:0.88rem; color:var(--text-dim-on-ink); max-width:32ch;}
-  .foot-logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:1.05rem; margin-bottom:14px;}
+  .foot-logo{display:flex; align-items:center; margin-bottom:14px;}
 
   @media (max-width:820px){
     .titleblock{grid-template-columns:1fr 1fr;}
@@ -876,9 +1483,13 @@
     .top-strip-inner{padding:6px 20px; font-size:0.68rem;}
     .top-strip-label{display:none;}
     .wrap{padding:0 20px;}
-    .nav{padding:14px 20px;}
-    .logo{font-size:0.9rem; gap:8px;}
-    .logo .mark, .foot-logo .mark{width:26px; height:26px;}
+    .nav{padding:12px 20px; position:relative; justify-content:center;}
+    .logo{margin:0 auto; display:inline-flex;}
+    .logo .mark{height:42px; width:auto;}
+    .logo .mark img{height:42px; width:auto;}
+    .nav-toggle{right:18px;}
+    .foot-logo{justify-content:center; margin-bottom:18px;}
+    .foot-logo .mark img{height:30px; width:auto;}
 
     section{padding:72px 0;}
     .hero{padding:145px 0 64px; background-size:32px 32px;}
@@ -895,12 +1506,10 @@
 
     .sheet{padding:28px 22px 22px;}
 
-    .stage{padding:20px 0;}
-    .stage h4{font-size:0.98rem;}
-    .stage p{font-size:0.84rem;}
+    .stage{padding:16px 14px;}
+    .stage h4{font-size:1rem;}
+    .stage p{font-size:0.86rem;}
 
-    .case{min-height:220px; padding:20px;}
-    .case h3{font-size:1.08rem;}
 
     .spec-value .num{font-size:1.6rem;}
 
@@ -922,6 +1531,8 @@
   @media (max-width:420px){
     .top-strip-inner{padding:5px 14px; font-size:0.63rem;}
     .top-strip-tz{font-size:0.6rem; padding:1px 4px;}
+    .logo .mark, .logo .mark img{height:36px;}
+    .nav-toggle{right:14px;}
   }
 
   /* ---------- FLOATING WHATSAPP BUTTON ---------- */
@@ -1004,17 +1615,41 @@
 
   @media (max-width:600px){
     .whatsapp-float{
-      bottom:20px;
-      right:20px;
-      width:50px;
-      height:50px;
+      bottom:16px;
+      right:16px;
+      width:42px;
+      height:42px;
+      box-shadow:0 4px 14px rgba(37,211,102,0.35), 0 2px 6px rgba(14,42,71,0.12);
+    }
+    .whatsapp-float::before{
+      inset:-2px;
+      border-width:1.5px;
+      animation:wa-pulse-mobile 2.4s infinite ease-out;
+    }
+    @keyframes wa-pulse-mobile{
+      0%{transform:scale(1); opacity:0.4;}
+      60%{transform:scale(1.18); opacity:0;}
+      100%{transform:scale(1.18); opacity:0;}
     }
     .whatsapp-float svg{
-      width:26px;
-      height:26px;
+      width:22px;
+      height:22px;
     }
     .whatsapp-tooltip{
       display:none;
+    }
+  }
+
+  @media (max-width:420px){
+    .whatsapp-float{
+      bottom:14px;
+      right:14px;
+      width:38px;
+      height:38px;
+    }
+    .whatsapp-float svg{
+      width:20px;
+      height:20px;
     }
   }
 </style>
@@ -1042,11 +1677,10 @@
   </div>
   <div class="nav-wrap">
     <nav class="nav">
-      <a href="#top" class="logo">
+      <a href="#top" class="logo" aria-label="Xunique Labs">
         <span class="mark">
-          <img src="assets/logo-mark.png" alt="Xunique Labs mark" loading="eager">
+          <img src="assets/logo-mark-nobg.png" alt="Xunique Labs" loading="eager">
         </span>
-        XUNIQUE LABS
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#services">Services</a></li>
@@ -1054,6 +1688,7 @@
         <li><a href="#process">Process</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Start a Project</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -1227,12 +1862,15 @@
         <p>A sample of recent builds. Full case studies available on request.</p>
       </div>
 
-  <div class="work-grid reveal">
+      <div class="work-grid reveal">
         <a class="case" href="https://www.ourhomeindia.com/" target="_blank" rel="noopener">
           <div class="case-figure" aria-hidden="true">
             <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg"><rect x="60" y="60" width="280" height="140" stroke="#0E2A47" stroke-width="1" fill="none"/><path d="M60 130H340" stroke="#0E2A47" stroke-width="1"/></svg>
           </div>
-          <span class="case-tag mono">CASE — PROP-01</span>
+          <div class="case-top">
+            <span class="case-tag mono">CASE — PROP-01</span>
+            <span class="case-action mono">LIVE SITE ↗</span>
+          </div>
           <div class="case-body">
             <h3>OurHomeIndia</h3>
             <p>A pan-India real estate discovery platform — verified buy/rent listings, an advisor enquiry flow, and property-owner onboarding.</p>
@@ -1244,7 +1882,10 @@
           <div class="case-figure" aria-hidden="true">
             <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg"><circle cx="120" cy="130" r="70" stroke="#0E2A47" stroke-width="1" fill="none"/><circle cx="280" cy="130" r="45" stroke="#0E2A47" stroke-width="1" fill="none"/></svg>
           </div>
-          <span class="case-tag mono">CASE — RTL-02</span>
+          <div class="case-top">
+            <span class="case-tag mono">CASE — RTL-02</span>
+            <span class="case-action mono">LIVE SITE ↗</span>
+          </div>
           <div class="case-body">
             <h3>Mr.Nothing</h3>
             <p>A curated lifestyle showcase spanning clothing, electronics, and home &amp; kitchen essentials, built for fast browsing and discovery.</p>
@@ -1256,7 +1897,10 @@
           <div class="case-figure" aria-hidden="true">
             <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg"><path d="M40 220V60M40 60L110 120L180 40L250 150L320 90L390 200" stroke="#0E2A47" stroke-width="1" fill="none"/></svg>
           </div>
-          <span class="case-tag mono">CASE — EDU-03</span>
+          <div class="case-top">
+            <span class="case-tag mono">CASE — EDU-03</span>
+            <span class="case-action mono">LIVE SITE ↗</span>
+          </div>
           <div class="case-body">
             <h3>FreedomNex</h3>
             <p>A digital learning sanctuary for classical Islamic philosophy — structured curricula, a wisdom anthology, and a reverent manuscript-inspired interface.</p>
@@ -1342,9 +1986,9 @@
             </div>
           </div>
           <div class="pricing-price-box">
-            <span class="pricing-orig">₹10000</span>
+            <span class="pricing-orig">₹12000</span>
             <div class="pricing-curr">
-              <span class="curr-sym">₹</span>5,999/-
+              <span class="curr-sym">₹</span>7,999/-
             </div>
           </div>
           <ul class="pricing-features">
@@ -1378,7 +2022,7 @@
             </li>
           </ul>
           <div class="pricing-footer">
-            <a href="https://wa.me/917458845252?text=Hi%20Xunique%20Labs,%20I'm%20interested%20in%20the%20Business%20Website%20Plan%20(₹5,999/-%20Up%20to%205%20Pages,%203–5%20Days).%20Let's%20discuss%20and%20book%20this%20project." class="btn btn-primary" target="_blank" rel="noopener">Book Now →</a>
+            <a href="https://wa.me/917458845252?text=Hi%20Xunique%20Labs,%20I'm%20interested%20in%20the%20Business%20Website%20Plan%20(₹7,999/-%20Up%20to%205%20Pages,%203–5%20Days).%20Let's%20discuss%20and%20book%20this%20project." class="btn btn-primary" target="_blank" rel="noopener">Book Now →</a>
             <span class="pricing-note">* Service charges only</span>
           </div>
         </div>
@@ -1542,15 +2186,131 @@
     </div>
   </div>
 
-  <!-- CTA BAND -->
-  <section class="cta-band" id="contact">
+  <!-- CONTACT US SECTION -->
+  <section class="contact-section" id="contact">
     <div class="wrap">
-      <div class="reveal">
-        <div class="eyebrow" style="justify-content:center;">Next Step</div>
-        <h2>Tell us what you're building. We'll scope it in a week.</h2>
-        <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-          <a href="mailto:support@xuniquelabs.com" class="btn btn-primary">support@xuniquelabs.com</a>
-          <a href="https://wa.me/917458845252?text=Hi%20Xunique%20Labs,%20I'm%20ready%20to%20build%20a%20project.%20Can%20we%20scope%20it%20out%20and%20discuss%20next%20steps%3F" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp +91 74588 45252</a>
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">Transmission Desk</div>
+          <h2>Contact our studio</h2>
+        </div>
+        <p>Tell us what you're building. We review incoming functional specs, designs, and inquiries with an engineer's eye and respond within 24 hours.</p>
+      </div>
+
+      <div class="contact-layout reveal">
+        <!-- Studio Dispatch Details -->
+        <div class="contact-info-panel">
+          <div class="contact-card">
+            <span class="mono contact-card-label">DIRECT DISPATCH</span>
+            <h3>Connect with our leads</h3>
+            <p>Skip the account managers. You'll speak directly with senior engineers and product designers who will architect and deliver your software.</p>
+
+            <div class="contact-channels">
+              <a href="mailto:support@xuniquelabs.com" class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-title">Primary Support</span>
+                  <span class="channel-value mono">support@xuniquelabs.com</span>
+                </div>
+              </a>
+
+              <a href="mailto:sayyednawababdulali@gmail.com" class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-title">Engineering Lead</span>
+                  <span class="channel-value mono">sayyednawababdulali@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://wa.me/917458845252?text=Hi%20Xunique%20Labs,%20I'm%20ready%20to%20build%20a%20project.%20Can%20we%20scope%20it%20out%20and%20discuss%20next%20steps%3F" target="_blank" rel="noopener" class="channel-item">
+                <div class="channel-icon" style="color:#25D366;">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.507 14.307l-.009.075c-.244-.122-1.442-.712-1.666-.793-.223-.082-.386-.122-.549.122-.163.245-.63 1.018-.773 1.18-.143.164-.285.184-.529.062-.244-.123-1.03-.38-1.963-1.212-.726-.647-1.216-1.446-1.359-1.69-.143-.245-.015-.378.107-.5.11-.11.245-.285.367-.428.122-.143.163-.245.244-.408.082-.163.041-.306-.02-.428-.061-.123-.549-1.325-.753-1.815-.198-.478-.4-.413-.549-.42-.143-.008-.306-.01-.469-.01-.163 0-.428.061-.652.305-.224.245-.855.836-.855 2.039 0 1.203.876 2.364.998 2.528.122.163 1.723 2.631 4.173 3.69.583.251 1.038.401 1.393.514.585.186 1.118.16 1.539.097.47-.07 1.442-.59 1.645-1.161.204-.571.204-1.06.143-1.161-.061-.102-.224-.163-.469-.286zM12.02 20.082h-.008a8.04 8.04 0 01-4.103-1.127l-.294-.175-3.053.801.815-2.977-.192-.306a8.037 8.037 0 01-1.233-4.298c0-4.444 3.616-8.06 8.063-8.06 2.152 0 4.175.839 5.696 2.36 1.521 1.522 2.359 3.545 2.358 5.698 0 4.445-3.617 8.086-8.042 8.086zm6.757-14.821A9.516 9.516 0 0012.02 2.457c-5.275 0-9.568 4.292-9.57 9.57 0 1.685.44 3.33 1.277 4.781L2.25 21.75l5.068-1.329a9.55 9.55 0 004.697 1.229h.005c5.274 0 9.568-4.293 9.57-9.571 0-2.557-.996-4.96-2.813-6.818z"/></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-title">Instant WhatsApp &amp; Call</span>
+                  <span class="channel-value mono">+91 74588 45252</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="contact-meta-strip">
+              <div class="meta-badge">
+                <span class="meta-dot"></span>
+                <span>Guaranteed Initial Response: &lt; 24 Hours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Specification Brief Form -->
+        <div class="contact-form-panel">
+          <form class="contact-form" id="projectContactForm">
+            <div class="form-header">
+              <span class="mono form-title-spec">PROJECT SPECIFICATION BRIEF</span>
+              <span class="mono form-status-stamp">FORM REV 2.4</span>
+            </div>
+
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label for="contactName" class="form-label mono">YOUR NAME *</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Alex Vance" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label mono">EMAIL ADDRESS *</label>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="alex@company.com" required>
+              </div>
+            </div>
+
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label for="contactPhone" class="form-label mono">PHONE / WHATSAPP</label>
+                <input type="tel" id="contactPhone" name="phone" class="form-input" placeholder="+1 (555) 000-0000">
+              </div>
+              <div class="form-group">
+                <label for="projectType" class="form-label mono">PROJECT DISCIPLINE *</label>
+                <select id="projectType" name="projectType" class="form-select" required>
+                  <option value="Web Application">Web Application (React / Next.js)</option>
+                  <option value="Mobile App">Mobile App (Flutter / iOS / Android)</option>
+                  <option value="Full-Stack MVP">Full-Stack MVP (0 to 1 Launch)</option>
+                  <option value="Custom Software & API">Custom Software &amp; Enterprise API</option>
+                  <option value="Architecture & Code Audit">Architecture &amp; Code Review</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="projectBudget" class="form-label mono">ESTIMATED BUDGET / TIER</label>
+              <select id="projectBudget" name="budget" class="form-select">
+                <option value="Starter Plan (₹1,999/- · Landing Page)">Starter Plan — ₹1,999/- (Landing Page, 1–2 Days)</option>
+                <option value="Business Website (₹7,999/- · Up to 5 Pages)" selected>Business Website — ₹7,999/- (Up to 5 Pages, Popular)</option>
+                <option value="E-Commerce Store (₹9,999/- · Online Store)">E-Commerce Store — ₹9,999/- (WooCommerce &amp; Payments)</option>
+                <option value="Custom Application (Negotiable · Full-Stack/Scale)">Custom Application — Negotiable (Full-Stack Web/Mobile)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label mono">PROJECT SUMMARY / SCOPE DETAILS *</label>
+              <textarea id="contactMessage" name="message" class="form-textarea" rows="4" placeholder="Describe the problem, target audience, core features, timeline expectations, or links to references/Figma..." required></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary form-submit-btn" style="background:#25D366; border-color:#25D366; color:#FFFFFF;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.507 14.307l-.009.075c-.244-.122-1.442-.712-1.666-.793-.223-.082-.386-.122-.549.122-.163.245-.63 1.018-.773 1.18-.143.164-.285.184-.529.062-.244-.123-1.03-.38-1.963-1.212-.726-.647-1.216-1.446-1.359-1.69-.143-.245-.015-.378.107-.5.11-.11.245-.285.367-.428.122-.143.163-.245.244-.408.082-.163.041-.306-.02-.428-.061-.123-.549-1.325-.753-1.815-.198-.478-.4-.413-.549-.42-.143-.008-.306-.01-.469-.01-.163 0-.428.061-.652.305-.224.245-.855.836-.855 2.039 0 1.203.876 2.364.998 2.528.122.163 1.723 2.631 4.173 3.69.583.251 1.038.401 1.393.514.585.186 1.118.16 1.539.097.47-.07 1.442-.59 1.645-1.161.204-.571.204-1.06.143-1.161-.061-.102-.224-.163-.469-.286zM12.02 20.082h-.008a8.04 8.04 0 01-4.103-1.127l-.294-.175-3.053.801.815-2.977-.192-.306a8.037 8.037 0 01-1.233-4.298c0-4.444 3.616-8.06 8.063-8.06 2.152 0 4.175.839 5.696 2.36 1.521 1.522 2.359 3.545 2.358 5.698 0 4.445-3.617 8.086-8.042 8.086zm6.757-14.821A9.516 9.516 0 0012.02 2.457c-5.275 0-9.568 4.292-9.57 9.57 0 1.685.44 3.33 1.277 4.781L2.25 21.75l5.068-1.329a9.55 9.55 0 004.697 1.229h.005c5.274 0 9.568-4.293 9.57-9.571 0-2.557-.996-4.96-2.813-6.818z"/></svg>
+                <span>Submit</span>
+              </button>
+              <a href="mailto:support@xuniquelabs.com" class="btn btn-ghost form-email-btn">
+                <span>Or Email Us Directly</span>
+              </a>
+            </div>
+            <div class="form-notice mono">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>Transmissions are confidential. NDAs available prior to technical scoping.</span>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -1562,9 +2322,8 @@
   <div class="wrap">
     <div class="foot-logo">
       <span class="mark mark-plaque">
-        <img src="assets/logo-mark.png" alt="Xunique Labs mark" loading="lazy">
+        <img src="assets/logo-mark-nobg.png" alt="Xunique Labs" loading="lazy">
       </span>
-      XUNIQUE LABS
     </div>
   </div>
 
@@ -1581,6 +2340,7 @@
         <li><a href="#process">Process</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="tb-cell">
@@ -1601,6 +2361,12 @@
     <span>SCALE — NOT TO SCALE</span>
   </div>
 </footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/917458845252?text=Hi%20Xunique%20Labs,%20I'm%20interested%20in%20discussing%20a%20new%20project%20with%20your%20studio." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat with Xunique Labs on WhatsApp">
+  <span class="whatsapp-tooltip mono">Chat on WhatsApp</span>
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.507 14.307l-.009.075c-.244-.122-1.442-.712-1.666-.793-.223-.082-.386-.122-.549.122-.163.245-.63 1.018-.773 1.18-.143.164-.285.184-.529.062-.244-.123-1.03-.38-1.963-1.212-.726-.647-1.216-1.446-1.359-1.69-.143-.245-.015-.378.107-.5.11-.11.245-.285.367-.428.122-.143.163-.245.244-.408.082-.163.041-.306-.02-.428-.061-.123-.549-1.325-.753-1.815-.198-.478-.4-.413-.549-.42-.143-.008-.306-.01-.469-.01-.163 0-.428.061-.652.305-.224.245-.855.836-.855 2.039 0 1.203.876 2.364.998 2.528.122.163 1.723 2.631 4.173 3.69.583.251 1.038.401 1.393.514.585.186 1.118.16 1.539.097.47-.07 1.442-.59 1.645-1.161.204-.571.204-1.06.143-1.161-.061-.102-.224-.163-.469-.286zM12.02 20.082h-.008a8.04 8.04 0 01-4.103-1.127l-.294-.175-3.053.801.815-2.977-.192-.306a8.037 8.037 0 01-1.233-4.298c0-4.444 3.616-8.06 8.063-8.06 2.152 0 4.175.839 5.696 2.36 1.521 1.522 2.359 3.545 2.358 5.698 0 4.445-3.617 8.086-8.042 8.086zm6.757-14.821A9.516 9.516 0 0012.02 2.457c-5.275 0-9.568 4.292-9.57 9.57 0 1.685.44 3.33 1.277 4.781L2.25 21.75l5.068-1.329a9.55 9.55 0 004.697 1.229h.005c5.274 0 9.568-4.293 9.57-9.571 0-2.557-.996-4.96-2.813-6.818z"/></svg>
+</a>
 
 <script>
   // mobile nav toggle
@@ -1690,6 +2456,53 @@
     setInterval(updateTime, 1000);
   }
   initUserClock();
+
+  // Contact Form Handling (Opens WhatsApp with all form info)
+  const contactForm = document.getElementById('projectContactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim() || 'Not specified';
+      const discipline = document.getElementById('projectType').value;
+      const budget = document.getElementById('projectBudget').value;
+      const message = document.getElementById('contactMessage').value.trim();
+
+      const waText = 
+`*New Project Inquiry — Xunique Labs*
+----------------------------------------
+*Name:* ${name}
+*Email:* ${email}
+*Phone/WhatsApp:* ${phone}
+*Discipline:* ${discipline}
+*Estimated Budget:* ${budget}
+
+*Project Summary & Scope:*
+${message}
+----------------------------------------
+_Dispatched via Xunique Labs Studio Contact Desk_`;
+
+      const waUrl = `https://wa.me/917458845252?text=${encodeURIComponent(waText)}`;
+
+      const submitBtn = contactForm.querySelector('.form-submit-btn');
+      const originalHtml = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span>✓ Opening WhatsApp...</span>';
+      submitBtn.style.opacity = '0.9';
+
+      const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = waUrl;
+      } else {
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+      }
+
+      setTimeout(() => {
+        submitBtn.innerHTML = originalHtml;
+        submitBtn.style.opacity = '1';
+      }, 3500);
+    });
+  }
 </script>
 
 </body>
